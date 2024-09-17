@@ -9,7 +9,7 @@ export class PokemonService {
         try {
             // Example of a GET request
             const response = await lastValueFrom(
-                this.httpService.get('https://pokeapi.co/api/v2/pokemon').pipe(
+                this.httpService.get('https://pokeapi.co/api/v2/pokemon?limit=100&offset=0').pipe(
                     map((res) => res.data),
                     catchError((error) => {
                         throw new Error(`Failed to fetch data: ${error.message}`);
